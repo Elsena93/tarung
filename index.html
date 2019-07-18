@@ -1,209 +1,164 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>Hyperspace by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<meta charset='utf-8' />
+		<title>Info Tata Ruang</title>
+		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+		<script>
+		if ('serviceWorker' in navigator) {
+  		window.addEventListener('load', () => {
+    			navigator.serviceWorker.register('../sw.js')
+        		.then((reg) => {
+          		console.log('Service worker registered.', reg);
+		        });
+		  });
+		}
+		</script>
+
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+
+		<link rel="stylesheet" type="text/css" href="static/css/style.css">
+
 	</head>
-	<body class="is-preload">
+	<body>
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+		<div id='map'></div>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Hyperspace</h1>
-							<p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
-
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
-
+		<div class='map-overlay'>
+			<div class='map-overlay-inner'>
+				<label>Kecerahan: <span id='slider-value'>50%</span></label>
+				<input id='slider' type='range' min='0' max='100' step='0' value='50' />
 			</div>
+		</div>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+		//Mapbox geocoder script
+		<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.min.js'></script>
+		<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.css' type='text/css' />
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+
+
+		<script>
+
+			//var bound = new mapboxgl.LngLatBounds([113.419556, -8.097369], [144.046183, -7.849337])
+
+			mapboxgl.accessToken = 'pk.eyJ1IjoiZWxzZW5hIiwiYSI6ImNqbmxkNDQxbzBuZGUzcW1obTcwaDRweTUifQ.MYh6pRKgA0gob5_iKAZEWg';
+
+			var map = new mapboxgl.Map({
+				container: 'map', // container id
+				style: 'mapbox://styles/elsena/cjwaadxhb0vbz1drzdyrpkcin', // stylesheet location
+				center: [114.005275, -7.706350], // starting position [lng, lat]
+				zoom: 10, // starting zoom
+				minZoom: 10,
+				maxZoom: 19,
+				//maxBounds: bound
+
+			});
+
+			map.on('load', function() {
+
+				//Add POLA RUANG layer
+				map.addSource('rtrw', {
+					"type": "vector",
+					"url": "mapbox://elsena.czv52nll"
+				});
+
+				map.addLayer({
+					"id": "pola",
+					"type": "fill",
+					"source": "rtrw",
+					"source-layer": "Pola_Ruang_RTRW_2013_EPSG4326-01inz3",
+					"paint": {
+					"fill-outline-color": "rgba(0,0,0,0.5)",
+					"fill-opacity" : 0.5,
+					"fill-color": ['match', ['get', 'KETERANGAN'],
+										'Bakau', '#fbb03b',
+										'Bendungan', '#fbb03b',
+										'Hutan Lindung', '#004529',
+										'Hutan Produksi', '#006837',
+										'Industri', '#800026',
+										'Kebun', '#41ab5d',
+										'Pelabuhan', '#fc4e2a',
+										'Pemukiman', '#fed976',
+										'Rawa-Rawa', '#807dba',
+										'Sawah Irigasi', '#addd8e',
+										'Sawah Tadah Hujan', '#f7fcb9',
+										'Sempadan Mata Air', '#d0d1e6',
+										'Sempadan Pantai', '#bcbddc',
+										'Sempadan Sungai', '#d0d1e6',
+										'Sungai', '#67a9cf',
+										'Tambak', '#54278f',
+										'Tanah Ladang/Tegalan', '#ffffe5',
+										/* other */ '#ccc'
+									]
+					}
+				});
+
+
+				//Add  administrasi layer
+				map.addSource('administrasi', {
+					"type": "vector",
+					"url": "mapbox://elsena.0ijbrg1m"
+				});
+
+				map.addLayer({
+					"id": "adm",
+					"type": "fill",
+					"source": "administrasi",
+					"source-layer": "Administrasi_RTRW_2013_EPSG43-0buy3u",
+					"paint": {
+					"fill-outline-color": "rgba(128,128,128,0.5)",
+					"fill-opacity" : 1,
+					"fill-color": "rgba(0,0,0,0)"
+					}
+				});
+
+
+
+				// When a click event occurs on a feature in the states layer, open a popup at the
+				// location of the click, with description HTML from its properties.
+
+				map.on('click', 'pola', function (e) {
+					new mapboxgl.Popup()
+					.setLngLat(e.lngLat)
+					.setHTML(e.features[0].properties.KETERANGAN)
+					.addTo(map);
+				});
+
+				//Slider script
+				var slider = document.getElementById('slider');
+				var sliderValue = document.getElementById('slider-value');
+
+				slider.addEventListener('input', function(e) {
+					// Adjust the layers opacity. layer here is arbitrary - this could
+					// be another layer name found in your style or a custom layer
+					// added on the fly using `addSource`.
+					map.setPaintProperty('pola', 'fill-opacity', parseInt(e.target.value, 10) / 100);
+
+					// Value indicator
+					sliderValue.textContent = e.target.value + '%';
+				});
+
+			});
+
+			map.addControl(new MapboxGeocoder({
+				accessToken: mapboxgl.accessToken,
+				mapboxgl: mapboxgl
+			}));
+
+			// Add geolocate control to the map.
+			map.addControl(new mapboxgl.GeolocateControl({
+				positionOptions: {
+					enableHighAccuracy: true
+				},
+				trackUserLocation: true
+			}));
+
+			// Add zoom and rotation controls to the map.
+			map.addControl(new mapboxgl.NavigationControl());
+
+		</script>
 
 	</body>
 </html>
